@@ -1,0 +1,27 @@
+server:
+  context-path: /accounts
+  port: 5001
+
+logging:
+  level:
+    org.springframework.security: DEBUG
+
+spring:
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    url: jdbc:postgresql://localhost:5432/account
+    username: account
+    password: RHCPfreakystyle
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: false
+
+# TODO: Replace with server key-store data
+#jwt:
+#  key-store:
+#    path: jwt.jks
+#    alias: 'jwt-key'
+#    password: 'RHCPfreakystyle'

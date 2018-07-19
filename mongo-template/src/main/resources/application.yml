@@ -1,0 +1,21 @@
+server:
+  context-path: /events
+  port: 5002
+
+logging:
+  level:
+    org.springframework.security: DEBUG
+
+spring:
+  data:
+    mongodb:
+      host: localhost
+      database: microserviceapp
+      port: 27017
+
+# TODO: Replace with server key-store data
+#jwt:
+#  key-store:
+#    path: jwt.jks
+#    alias: 'jwt-key'
+#    password: 'RHCPfreakystyle'

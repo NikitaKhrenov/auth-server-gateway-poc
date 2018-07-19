@@ -1,0 +1,55 @@
+server:
+  context-path: /auth
+  port: 5000
+
+logging:
+  level:
+    org.springframework.security: DEBUG
+
+spring:
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    url: jdbc:postgresql://localhost:5432/auth
+    username: auth
+    password: RHCPfreakystyle
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: false
+
+# TODO: Replace with server key-store data
+jwt:
+  key-store:
+    path: jwt.jks
+    alias: 'jwt-key'
+    password: 'RHCPfreakystyle'
+
+google:
+  client:
+    clientId: 208499755450-msduvsshj64blk1efglplvs80g82boqu.apps.googleusercontent.com
+    clientSecret: WWAGxM-aVlydu3mBc54LxIQU
+    accessTokenUri: https://www.googleapis.com/oauth2/v4/token
+    userAuthorizationUri: https://accounts.google.com/o/oauth2/v2/auth
+    preEstablishedRedirectUri: http://localhost:5000/auth/login/google
+    useCurrentUri: false
+    tokenName: oauth_token
+    authenticationScheme: query
+    clientAuthenticationScheme: form
+    scope: openid profile email
+  resource:
+    userInfoUri: https://www.googleapis.com/oauth2/v3/userinfo
+    preferTokenInfo: false
+
+facebook:
+  client:
+    clientId: 233668646673605
+    clientSecret: 33b17e044ee6a4fa383f46ec6e28ea1d
+    accessTokenUri: https://graph.facebook.com/oauth/access_token
+    userAuthorizationUri: https://www.facebook.com/dialog/oauth
+    tokenName: oauth_token
+    authenticationScheme: query
+    clientAuthenticationScheme: form
+  resource:
+    userInfoUri: https://graph.facebook.com/me

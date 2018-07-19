@@ -1,0 +1,19 @@
+server:
+  context-path: /api
+  port: 8081
+
+ribbon:
+  eureka:
+    enabled: false
+
+zuul:
+  ignoredServices: '*'
+  host:
+    connect-timeout-millis: 20000
+    socket-timeout-millis: 20000
+
+  routes:
+    auth:
+      path: /auth/**
+      url: http://localhost:5000/auth
+      sensitiveHeaders:
