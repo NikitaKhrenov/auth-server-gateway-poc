@@ -4,4 +4,6 @@ include 'auth-service'
 include 'account'
 include 'event'
 include 'gateway'
+include 'common-lib'
+include 'shop-service'
 

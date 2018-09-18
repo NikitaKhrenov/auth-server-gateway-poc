@@ -1,4 +1,4 @@
-package ru.nikitakhrenov.event;
+package ru.nikitakhrenov.shop;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
